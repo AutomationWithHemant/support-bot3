@@ -12,7 +12,7 @@ questions = [
 
 for q in questions:
     response = requests.post(
-        "http://localhost:8000/chat",
+        "http://localhost:8000/chat", #dgdfgdfgfdg
         json={"question": q}
     )
 
