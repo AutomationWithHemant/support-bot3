@@ -1,0 +1,20 @@
+PromptFoo Red Teaming - QodeBench Support Bot
+=============================================
+Run these BEFORE class (the scan is slow + costs tokens).
+In class, only open the report (instant, no cost).
+
+STEP 1 - set up the red team (one time, in the support-bot folder):
+  npx promptfoo@latest redteam init
+
+  When it asks for the target, choose "Custom" and point it at
+  your bot_provider.py (file://bot_provider.py), OR point it at
+  your running API: http://localhost:8000/chat
+
+STEP 2 - run the attacks (SLOW - do this the night before):
+  npx promptfoo@latest redteam run
+
+STEP 3 - open the report (INSTANT - do this live in class):
+  npx promptfoo@latest redteam report
+
+  This opens a browser report showing which attacks got through:
+  prompt injection, jailbreaks, PII leaks, etc.

@@ -1,0 +1,15 @@
+name: AI Quality Tests
+on: [pull_request] # trigger: every PR
+
+jobs:
+  test:
+    runs-on: ubuntu-latest #mac / window
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - run: pip install -r requirements.txt
+      - run: deepeval test run test_bot.py
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+
